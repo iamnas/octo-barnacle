@@ -10,10 +10,6 @@ import Cards from './components/Cards'
 import ReadyEyes from './components/ReadyEyes'
 import Footer from './components/Footer'
 
-
-
-
-
 export default function App() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
