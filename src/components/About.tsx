@@ -16,7 +16,7 @@ export default function About() {
         controls.start("rest");
     };
     return (
-        <div data-scroll data-scroll-section data-scroll-speed="-.02" className='w-full px-[50px] py-20 bg-[#ff9841] rounded-2xl text-black'>
+        <div data-scroll data-scroll-section data-scroll-speed="-.02" className='w-full px-[50px] py-20 bg-[#ff9841] rounded-2xl text-white'>
             <h1 className='text-[4vw] leading-[4.5vw] tracking-tight pr-[6vw]'>Ochi is a strategic presentation agency for forward-thinking businesses that need to raise funds, sell products, explain complex ideas, and hire great people.</h1>
             <div className='w-full border-t-[1px] border-[#8f6441] mt-20'>
                 <div className='w-full mt-3 justify-center grid grid-cols-12 gap-6 '>
@@ -41,7 +41,7 @@ export default function About() {
                                 >
                                     <a href='' className='relative z-10'>{item}</a>
                                     <motion.div
-                                        className="absolute bottom-0 left-0 h-[1px] bg-black"
+                                        className="absolute bottom-0 left-0 h-[1px] bg-white"
                                         variants={{
                                             initial: { scaleX: 1, originX: 1 },
                                             hover: { scaleX: 0, originX: 1, transition: { duration: 0.3 } }
@@ -49,7 +49,7 @@ export default function About() {
                                         style={{ width: '100%' }}
                                     />
                                     <motion.div
-                                        className="absolute bottom-0 left-0 h-[1px] bg-black"
+                                        className="absolute bottom-0 left-0 h-[1px] bg-white"
                                         variants={{
                                             initial: { scaleX: 0, originX: 0 },
                                             hover: { scaleX: 1, originX: 0, transition: { delay: 0.3, duration: 0.3 } }
@@ -69,7 +69,7 @@ export default function About() {
                         <span className="z-10 text-white tracking-wide font-medium">READ MORE</span>
                         <div className="w-12 h-12 z-10 flex items-center justify-center">
                             <div className="w-3 h-3  bg-white rounded-full transform scale-100 group-hover:scale-400 transition-transform duration-300 ease-in-out flex items-center justify-center">
-                                <FaArrowUpLong className="text-black text-[4px] opacity-0 rotate-45 group-hover:opacity-100 transition-all duration-300" />
+                                <FaArrowUpLong className="text-white text-[4px] opacity-0 rotate-45 group-hover:opacity-100 transition-all duration-300" />
                             </div>
                         </div>
                         <span

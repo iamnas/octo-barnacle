@@ -1,18 +1,20 @@
 import { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
 import LandingPage from './components/LandingPage'
-// import Marquee from './components/marquee'
-// import About from './components/About'
-// import Eyes from './components/Eyes'
-// import Featured from './components/Featured'
-// import Cards from './components/Cards'
-// import ReadyEyes from './components/ReadyEyes'
-// import Footer from './components/Footer'
+import About from './components/About'
+import Marquee from './components/Marquee'
+import Eyes from './components/Eyes'
+import Featured from './components/Featured'
 import LocomotiveScroll from 'locomotive-scroll'
+import Cards from './components/Cards'
+import ReadyEyes from './components/ReadyEyes'
+import Footer from './components/Footer'
 
 
 
-const App = () => {
+
+
+export default function App() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
 
@@ -31,30 +33,26 @@ const App = () => {
   }, []);
 
 
+
   return (
+    <div>
+      <div
+        ref={scrollRef}
+        data-scroll-container
+        className="w-full min-h-screen bg-transparent text-white  font-manrope"
+      >
+        <Navbar />
+        <LandingPage />
+        <Marquee />
+        <About />
+        <Eyes />
+        <Featured />
+        <Cards />
+        <ReadyEyes />
+        <Footer />
 
-
-
-    <div
-      ref={scrollRef}
-      data-scroll-container
-      className="w-full min-h-screen bg-transparent text-white  font-manrope"
-    >
-      <Navbar />
-      <LandingPage />
+      </div>
 
     </div>
-
-
-
   )
 }
-
-export default App
-// <Marquee />
-// <About />
-// <Eyes />
-// <Featured />
-// <Cards/>
-// <ReadyEyes/>
-// <Footer/> 
