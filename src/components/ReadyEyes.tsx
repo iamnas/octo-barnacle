@@ -21,12 +21,14 @@ function ReadyEyes() {
   };
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e:MouseEvent) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 
-      const getAngle = (eyeRef) => {
-        const rect = eyeRef.current.getBoundingClientRect();
+      const getAngle = (eyeRef:React.RefObject<HTMLDivElement | null>) => {
+        const rect = eyeRef.current?.getBoundingClientRect();
+        if (!rect) return 0;
+        // const rect = eyeRef.current.getBoundingClientRect();
         const eyeCenterX = rect.left + rect.width / 2;
         const eyeCenterY = rect.top + rect.height / 2;
 
