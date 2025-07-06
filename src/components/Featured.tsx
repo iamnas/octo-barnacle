@@ -4,9 +4,9 @@ import { FaArrowUpLong } from "react-icons/fa6";
 
 function Featured() {
   const textAnimation = [useAnimation(), useAnimation()]
-  const imageRefs = [useRef(null), useRef(null)]
+  const imageRefs = [useRef(null) as React.RefObject<null>, useRef(null) as React.RefObject<null>]
 
-  const handleHover = (index) => {
+  const handleHover = (index:number) => {
     textAnimation[index].start({ y: "0" })
     if (imageRefs[index].current) {
       imageRefs[index].current.style.transform = 'scale(0.95)'
@@ -14,7 +14,7 @@ function Featured() {
     }
   }
 
-  const handleHoverEnd = (index) => {
+  const handleHoverEnd = (index:number) => {
     textAnimation[index].start({ y: "100%" })
     if (imageRefs[index].current) {
       imageRefs[index].current.style.transform = 'scale(1)'

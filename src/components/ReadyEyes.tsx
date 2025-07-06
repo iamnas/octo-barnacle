@@ -1,5 +1,5 @@
 import { useAnimation } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
 
