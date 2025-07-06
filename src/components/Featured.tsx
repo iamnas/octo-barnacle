@@ -8,6 +8,7 @@ function Featured() {
 
   const handleHover = (index:number) => {
     textAnimation[index].start({ y: "0" })
+    
     if (imageRefs[index].current) {
       imageRefs[index].current.style.transform = 'scale(0.95)'
       imageRefs[index].current.style.zIndex = '100'
@@ -16,6 +17,7 @@ function Featured() {
 
   const handleHoverEnd = (index:number) => {
     textAnimation[index].start({ y: "100%" })
+
     if (imageRefs[index].current) {
       imageRefs[index].current.style.transform = 'scale(1)'
       imageRefs[index].current.style.zIndex = '20'
