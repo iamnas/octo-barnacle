@@ -4,24 +4,39 @@ export default function Eyes() {
     const [rotateLeft, setRotateLeft] = useState(0);
     const [rotateRight, setRotateRight] = useState(0);
 
-    const leftEyeRef = useRef(null);
-    const rightEyeRef = useRef(null);
+
+    const leftEyeRef = useRef<HTMLDivElement>(null);
+    const rightEyeRef = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
 
-            const getAngle = (eyeRef:React.RefObject<null>) => {
-                const rect = eyeRef?.current?.getBoundingClientRect();
+            const getAngle = (eyeRef: React.RefObject<HTMLDivElement | null>) => {
+                const rect = eyeRef.current?.getBoundingClientRect();
+                if (!rect) return 0;
+
                 const eyeCenterX = rect.left + rect.width / 2;
                 const eyeCenterY = rect.top + rect.height / 2;
 
                 const dx = mouseX - eyeCenterX;
                 const dy = mouseY - eyeCenterY;
 
-                return (Math.atan2(dy, dx) * (180 / Math.PI) - 180);
+                return Math.atan2(dy, dx) * (180 / Math.PI) - 180;
             };
+
+            // const getAngle = (eyeRef: React.RefObject<HTMLDivElement>) => {
+            //     const rect = eyeRef?.current?.getBoundingClientRect();
+            //     const eyeCenterX = rect.left + rect.width / 2;
+            //     const eyeCenterY = rect.top + rect.height / 2;
+
+            //     const dx = mouseX - eyeCenterX;
+            //     const dy = mouseY - eyeCenterY;
+
+            //     return (Math.atan2(dy, dx) * (180 / Math.PI) - 180);
+            // };
 
             if (leftEyeRef.current && rightEyeRef.current) {
                 setRotateLeft(getAngle(leftEyeRef));
